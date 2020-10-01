@@ -3,10 +3,10 @@ var bodyParser = require('body-parser');
 const http = require('http');
 var app = express();
 var axios = require('axios');
-const MessagingResponse = require('twilio').twiml.MessagingResponse;
+var { SID, AUTH } = require("./config")
 
-const accountSid = 'AC6330ccfc0f2fcb429b1e40548487d534';
-const authToken = 'ac6e59eacf97573a429d1dc13c21758e';
+const accountSid = SID;
+const authToken = AUTH;
 const client = require('twilio')(accountSid, authToken);
 
 app.use(bodyParser.urlencoded({ extended: false }));
